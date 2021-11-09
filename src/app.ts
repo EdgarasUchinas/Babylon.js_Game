@@ -20,9 +20,9 @@ class App {
         camera.attachControl(canvas, true);
         var light1: HemisphericLight = new HemisphericLight("light1", new Vector3(1, 1, 0), scene);
         var sphere: Mesh = MeshBuilder.CreateSphere("sphere", { diameter: 0.5 }, scene);
-        var music: Sound = new Sound("Music", "../sounds/harmony.mp3", scene, function() {
-            // Sound has been downloaded & decodedn
-            music.play();
+        var music = new Sound("Music", "sounds/harmony.mp3", scene, null, {
+            loop: true,
+            autoplay: true
           });
         
         
