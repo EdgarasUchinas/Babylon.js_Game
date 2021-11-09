@@ -109,6 +109,11 @@ class App {
         const guiMenu = AdvancedDynamicTexture.CreateFullscreenUI("UI");
         guiMenu.idealHeight = 720; //fit our fullscreen ui to this height
 
+        //MAIN LOGO
+        const name = Button.CreateImageOnlyButton("Runescape", "/assets/logo.png");
+        guiMenu.addControl(name);
+
+
         //create a simple button
         const startBtn = Button.CreateSimpleButton("start", "PLAY");
         startBtn.width = 0.2
@@ -207,7 +212,7 @@ class App {
         loseBtn.verticalAlignment = Control.VERTICAL_ALIGNMENT_BOTTOM;
         playerUI.addControl(loseBtn);
 
-        //this handles interactions with the start button attached to the scene
+        // this handles interactions with the start button attached to the scene
         loseBtn.onPointerDownObservable.add(() => {
             this._goToLose();
             scene.detachControl(); //observables disabled
